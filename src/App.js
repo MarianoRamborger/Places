@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Redirect, Switch } from 'react-router-d
 import Users from './user/pages/Users'
 import NewPlace from './places/pages/NewPlace'
 import MainNavigation from './shared/components/UIElements/Navigation/MainNavigation'
+import UserPlaces from './places/pages/UserPlaces'
 
 const App = () => {
 
@@ -23,6 +24,12 @@ const App = () => {
         <Route path= "/places/new" exact={true}>  {/* exact hace que solo se considere match con rutas exactas */}
           <NewPlace /> 
         </Route>
+
+   {/* The following is a dynamic route. Sintaxis es :dynamic content */}
+        <Route path= "/:userId/places" exact={true}>
+          <UserPlaces />
+        </Route>
+     
         
       
 
